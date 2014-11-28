@@ -57,7 +57,7 @@ public class CoreFrMain {
             }
         }
     }
-    
+     
     public void exit() {
         System.exit(0);
     }

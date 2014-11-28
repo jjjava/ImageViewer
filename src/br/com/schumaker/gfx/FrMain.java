@@ -1,6 +1,13 @@
 package br.com.schumaker.gfx;
 
 import br.com.schumaker.core.CoreFrMain;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -16,6 +23,20 @@ public class FrMain extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public FrMain(File file) {
+        try {
+            this.initComponents();
+            Image image = ImageIO.read(file);
+            ImageIcon ii = new ImageIcon(image);
+            JScrollPane jsp = new JScrollPane(new JLabel(ii));
+            this.getContentPane().add(jsp);
+            this.setVisible(true);
+            this.setLocationRelativeTo(null);
+            this.setVisible(true);
+        } catch (IOException ex) {
+            System.err.println(ex);
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
