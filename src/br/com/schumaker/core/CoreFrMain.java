@@ -45,6 +45,7 @@ public class CoreFrMain {
             File dir = new File(chooser.getSelectedFile().getAbsolutePath());
             File[] files = dir.listFiles(new HsFileFilter());
             FileImages fileImages = FileImages.getInstance();
+            fileImages.clean();
             for (File f : files) {
                 fileImages.add(f.getAbsolutePath());
             }

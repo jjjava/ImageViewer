@@ -31,7 +31,9 @@ public class OneParameters implements Chain {
                 for (File f : files) {
                     fileImages.add(f.getAbsolutePath());
                 }
+                System.err.println("sdsdsds");
                 FrMain2.getInstance().draw(new File(fileImages.getPath(0)));
+                FrMain2.getInstance().setVisible(true);
             }
         } else {
             System.out.println("O Programa funciona com 0 e  1 parametro para path.");

@@ -54,4 +54,9 @@ public class FileImages {
     public String start() {
         return getPath(0);
     }
+    
+    public void clean(){
+        index =0;
+        path.clear();
+    }
 }
