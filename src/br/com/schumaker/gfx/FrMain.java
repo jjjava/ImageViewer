@@ -68,6 +68,11 @@ public class FrMain extends javax.swing.JFrame {
                 formComponentResized(evt);
             }
         });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         jMenu1.setText("Arquivo");
 
@@ -137,6 +142,10 @@ public class FrMain extends javax.swing.JFrame {
             jsp.setSize(this.getWidth(), this.getHeight());
         }
     }//GEN-LAST:event_formComponentResized
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

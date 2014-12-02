@@ -10,8 +10,10 @@ public class FileImages {
 
     private static final FileImages INSTANCE = new FileImages();
     private ArrayList<String> path;
+    private int index;
 
     private FileImages() {
+        index = 0;
         path = new ArrayList<>();
     }
 
@@ -25,5 +27,31 @@ public class FileImages {
 
     public String getPath(int n) {
         return path.get(n);
+    }
+
+    public String next() {
+        if (index < path.size() - 1) {
+            index++;
+        }
+        return getPath(index);
+    }
+
+    public String back() {
+        if (index > 0) {
+            index--;
+        }
+        return path.get(index);
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public String end() {
+        return getPath(path.size()-1);
+    }
+
+    public String start() {
+        return getPath(0);
     }
 }
