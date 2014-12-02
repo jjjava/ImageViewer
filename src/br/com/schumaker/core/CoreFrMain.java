@@ -35,7 +35,7 @@ public class CoreFrMain {
         if (sf == JFileChooser.APPROVE_OPTION) {
             try {
                 Image image = ImageIO.read(chooser.getSelectedFile());
-                //ScrollPaneDemo scrollPaneDemo = new ScrollPaneDemo(image);
+                
             } catch (IOException ex) {
                 System.err.println(ex);
             }
