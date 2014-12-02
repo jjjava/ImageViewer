@@ -1,6 +1,7 @@
 package br.com.schumaker.gfx;
 
 import br.com.schumaker.core.CoreFrMain;
+import br.com.schumaker.io.HsFile;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -33,17 +34,12 @@ public class FrMain extends javax.swing.JFrame {
     }
 
     public void draw(File file) {
-        try {
-            Image image = ImageIO.read(file);
-            ImageIcon ii = new ImageIcon(image);
-            jsp = new JScrollPane(new JLabel(ii));
-            jsp.getVerticalScrollBar().setUnitIncrement(16);
-            getContentPane().add(jsp);
-            setExtendedState(JFrame.MAXIMIZED_BOTH);
-            setVisible(true);
-        } catch (IOException ex) {
-            System.err.println(ex);
-        }
+        ImageIcon ii = new ImageIcon(HsFile.readFromDisk(file));
+        jsp = new JScrollPane(new JLabel(ii));
+        jsp.getVerticalScrollBar().setUnitIncrement(16);
+        getContentPane().add(jsp);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
     }
 
     @SuppressWarnings("unchecked")

@@ -1,5 +1,6 @@
 package br.com.schumaker.core;
 
+import br.com.schumaker.gfx.FrMain;
 import br.com.schumaker.io.HsFileFilter;
 import br.com.schumaker.model.FileImages;
 import java.awt.Image;
@@ -33,12 +34,7 @@ public class CoreFrMain {
         chooser.setApproveButtonText("Abrir");
         int sf = chooser.showOpenDialog(null);
         if (sf == JFileChooser.APPROVE_OPTION) {
-            try {
-                Image image = ImageIO.read(chooser.getSelectedFile());
-                
-            } catch (IOException ex) {
-                System.err.println(ex);
-            }
+            FrMain.getInstance().draw(chooser.getSelectedFile());
         }
     }
     
