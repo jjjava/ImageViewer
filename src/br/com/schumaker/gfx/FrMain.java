@@ -57,6 +57,7 @@ public class FrMain extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItemOpen = new javax.swing.JMenuItem();
         jMenuItemOpenFolder = new javax.swing.JMenuItem();
+        jMenuItemSaveAs = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -85,6 +86,9 @@ public class FrMain extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItemOpenFolder);
+
+        jMenuItemSaveAs.setText("Salvar como");
+        jMenu1.add(jMenuItemSaveAs);
         jMenu1.add(jSeparator1);
 
         jMenuItemExit.setText("Sair");
@@ -141,6 +145,7 @@ public class FrMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemOpen;
     private javax.swing.JMenuItem jMenuItemOpenFolder;
+    private javax.swing.JMenuItem jMenuItemSaveAs;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
