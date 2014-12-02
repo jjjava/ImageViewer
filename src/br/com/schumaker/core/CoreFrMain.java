@@ -1,7 +1,6 @@
 package br.com.schumaker.core;
 
 import br.com.schumaker.gfx.FrMain2;
-import br.com.schumaker.io.HsFile;
 import br.com.schumaker.io.HsFileFilter;
 import br.com.schumaker.model.FileImages;
 import java.io.File;
@@ -43,7 +42,6 @@ public class CoreFrMain {
         chooser.setApproveButtonText("Abrir");
         int sf = chooser.showOpenDialog(null);
         if (sf == JFileChooser.APPROVE_OPTION) {
-            System.out.println(chooser.getSelectedFile().getAbsolutePath());
             File dir = new File(chooser.getSelectedFile().getAbsolutePath());
             File[] files = dir.listFiles(new HsFileFilter());
             FileImages fileImages = FileImages.getInstance();

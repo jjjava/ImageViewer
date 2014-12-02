@@ -81,13 +81,16 @@ public class FrMain2 extends JFrame {
 
     private void initComponents() {
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuFile = new javax.swing.JMenu();
         jMenuItemOpen = new javax.swing.JMenuItem();
         jMenuItemOpenFolder = new javax.swing.JMenuItem();
         jMenuItemSaveAs = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuEditar = new javax.swing.JMenu();
+        jMenuHelp = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,7 +101,7 @@ public class FrMain2 extends JFrame {
             }
         });
 
-        jMenu1.setText("Arquivo");
+        jMenuFile.setText("Arquivo");
         jMenuItemOpen.setText("Abrir");
         jMenuItemOpen.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -107,7 +110,7 @@ public class FrMain2 extends JFrame {
             }
         });
 
-        jMenu1.add(jMenuItemOpen);
+        jMenuFile.add(jMenuItemOpen);
         jMenuItemOpenFolder.setText("Abrir pasta");
         jMenuItemOpenFolder.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -115,10 +118,10 @@ public class FrMain2 extends JFrame {
                 jMenuItemOpenFolderActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemOpenFolder);
+        jMenuFile.add(jMenuItemOpenFolder);
         jMenuItemSaveAs.setText("Salvar como");
-        jMenu1.add(jMenuItemSaveAs);
-        jMenu1.add(jSeparator1);
+        jMenuFile.add(jMenuItemSaveAs);
+        jMenuFile.add(jSeparator1);
         jMenuItemExit.setText("Sair");
         jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -126,16 +129,27 @@ public class FrMain2 extends JFrame {
                 jMenuItemExitActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemExit);
-        jMenuBar1.add(jMenu1);
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jMenuFile.add(jMenuItemExit);
+        jMenuBar1.add(jMenuFile);
+        jMenuEditar.setText("Editar");
+        jMenuBar1.add(jMenuEditar);
+        
+        jMenuHelp.setText("Ajuda");
+        jMenuItem1.setText("Tópicos de Ajuda");
+        jMenuHelp.add(jMenuItem1);
+        jMenuItem2.setText("Sobre");
+        jMenuHelp.add(jMenuItem2);
+        jMenuBar1.add(jMenuHelp);
+        
         setJMenuBar(jMenuBar1);
     }
 
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenuFile;
+    private javax.swing.JMenu jMenuEditar;
+    private javax.swing.JMenu jMenuHelp;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemOpen;
     private javax.swing.JMenuItem jMenuItemOpenFolder;
