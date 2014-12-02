@@ -1,4 +1,4 @@
-package br.com.schumaker.core;
+package br.com.schumaker.core.chain;
 
 import br.com.schumaker.gfx.FrMain2;
 import br.com.schumaker.io.HsFileFilter;

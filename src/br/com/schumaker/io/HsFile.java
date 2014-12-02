@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public class HsFile {
 

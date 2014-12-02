@@ -1,11 +1,13 @@
 package br.com.schumaker.core;
 
+import br.com.schumaker.core.chain.Pool;
 import java.util.ArrayList;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author Hudson Schumaker Singleton Eager
+ * @author Hudson Schumaker 
+ * Singleton Eager
  */
 public class FileFilterReadPool implements Pool<FileNameExtensionFilter> {
 

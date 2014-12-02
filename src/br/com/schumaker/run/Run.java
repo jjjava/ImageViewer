@@ -1,19 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.schumaker.run;
 
-import br.com.schumaker.core.Chain;
-import br.com.schumaker.core.HelpParameters;
-import br.com.schumaker.core.OneParameters;
-import br.com.schumaker.core.ZeroParameters;
+import br.com.schumaker.core.chain.Chain;
+import br.com.schumaker.core.chain.HelpParameters;
+import br.com.schumaker.core.chain.OneParameters;
+import br.com.schumaker.core.chain.ZeroParameters;
 import br.com.schumaker.gfx.FrMain;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public class Run {
 

@@ -10,7 +10,7 @@ import javax.swing.JScrollPane;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public class FrMain2 extends JFrame {
 
@@ -22,7 +22,7 @@ public class FrMain2 extends JFrame {
     private FrMain2() {
         super("Viewer");
         this.initComponents();
-       // this.setSize(800, 600);
+        // this.setSize(800, 600);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
     }

@@ -1,4 +1,4 @@
-package br.com.schumaker.core;
+package br.com.schumaker.core.chain;
 
 /**
  *
