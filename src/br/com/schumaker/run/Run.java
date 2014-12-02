@@ -4,7 +4,6 @@ import br.com.schumaker.core.chain.Chain;
 import br.com.schumaker.core.chain.HelpParameters;
 import br.com.schumaker.core.chain.OneParameters;
 import br.com.schumaker.core.chain.ZeroParameters;
-import br.com.schumaker.gfx.FrMain;
 
 /**
  *
@@ -28,5 +27,9 @@ public class Run {
                 zeroParam.executeProgram(args);
             }
         });
+    }
+
+    public static void laf() {
+
     }
 }
