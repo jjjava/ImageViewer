@@ -22,7 +22,7 @@ public class OneParameters implements Chain {
         if (params.length == 1) {
             File file = new File(params[0]);
             if (file.isFile()) {
-                new FrMain(file);
+                FrMain.getInstance().draw(file);
             } else {
                 File []files = file.listFiles(new HsFileFilter());
             }

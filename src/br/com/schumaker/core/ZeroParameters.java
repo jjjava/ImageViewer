@@ -18,7 +18,7 @@ public class ZeroParameters implements Chain {
     @Override
     public void executeProgram(String[] params) {
         if (params.length == 0) {
-            new FrMain().setVisible(true);
+            FrMain.getInstance().setVisible(true);
         } else {
             nextInChain.executeProgram(params);
         }

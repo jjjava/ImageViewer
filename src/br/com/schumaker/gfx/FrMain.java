@@ -21,16 +21,15 @@ public class FrMain extends javax.swing.JFrame {
      */
     private JScrollPane jsp;
 
-    public FrMain() {
+    private static final FrMain INSTANCE = new FrMain();
+
+    private FrMain() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
     }
 
-    public FrMain(File file) {
-        this.initComponents();
-        this.setLocationRelativeTo(null);
-        draw(file);
+    public static FrMain getInstance() {
+        return INSTANCE;
     }
 
     public void draw(File file) {
@@ -158,7 +157,9 @@ public class FrMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        jsp.setSize(this.getWidth(), this.getHeight());
+        if (jsp != null) {
+            jsp.setSize(this.getWidth(), this.getHeight());
+        }
     }//GEN-LAST:event_formComponentResized
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
