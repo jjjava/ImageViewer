@@ -1,6 +1,7 @@
 package br.com.schumaker.core;
 
 import br.com.schumaker.gfx.FrMain;
+import br.com.schumaker.gfx.FrMain2;
 
 /**
  *
@@ -18,7 +19,7 @@ public class ZeroParameters implements Chain {
     @Override
     public void executeProgram(String[] params) {
         if (params.length == 0) {
-            FrMain.getInstance().setVisible(true);
+            FrMain2.getInstance().setVisible(true);
         } else {
             nextInChain.executeProgram(params);
         }

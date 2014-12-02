@@ -2,12 +2,8 @@ package br.com.schumaker.gfx;
 
 import br.com.schumaker.core.CoreFrMain;
 import br.com.schumaker.io.HsFile;
-import java.awt.Image;
 import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
@@ -21,11 +17,13 @@ public class FrMain extends javax.swing.JFrame {
      * Creates new form FrMain
      */
     private JScrollPane jsp;
-
+    private JLabel label;
+    private ImageIcon ii;
     private static final FrMain INSTANCE = new FrMain();
 
     private FrMain() {
-        initComponents();
+        this.initComponents();
+        this.setSize(800, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -34,21 +32,27 @@ public class FrMain extends javax.swing.JFrame {
     }
 
     public void draw(File file) {
-        ImageIcon ii = new ImageIcon(HsFile.readFromDisk(file));
-        jsp = new JScrollPane(new JLabel(ii));
-        jsp.getVerticalScrollBar().setUnitIncrement(16);
-        getContentPane().add(jsp);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setVisible(true);
+        flush();
+        ii = new ImageIcon(HsFile.readFromDisk(file));
+        label = new JLabel(ii);
+        jsp = new JScrollPane(label);
+        jsp.getVerticalScrollBar().setUnitIncrement(16);//velocidade da whell do mouse
+        this.getContentPane().add(jsp);
+        setSize(getWidth() - 1, getHeight() - 1);
+        setSize(getWidth() + 1, getHeight() + 1);
+       //repaint();
+    }
+
+    private void flush() {
+        ii = null;
+        label = null;
+        jsp = null;
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemOpen = new javax.swing.JMenuItem();
@@ -63,32 +67,6 @@ public class FrMain extends javax.swing.JFrame {
                 formComponentResized(evt);
             }
         });
-
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jButton1.setText("jButton1");
-
-        jButton2.setText("jButton2");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(77, 77, 77))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
-        );
 
         jMenu1.setText("Arquivo");
 
@@ -128,13 +106,11 @@ public class FrMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 250, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 279, Short.MAX_VALUE)
         );
 
         pack();
@@ -159,15 +135,12 @@ public class FrMain extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentResized
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemOpen;
     private javax.swing.JMenuItem jMenuItemOpenFolder;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

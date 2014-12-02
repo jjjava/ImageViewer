@@ -1,6 +1,6 @@
 package br.com.schumaker.core;
 
-import br.com.schumaker.gfx.FrMain;
+import br.com.schumaker.gfx.FrMain2;
 import br.com.schumaker.io.HsFileFilter;
 import java.io.File;
 
@@ -22,7 +22,8 @@ public class OneParameters implements Chain {
         if (params.length == 1) {
             File file = new File(params[0]);
             if (file.isFile()) {
-                FrMain.getInstance().draw(file);
+                FrMain2.getInstance().draw(file);
+                FrMain2.getInstance().setVisible(true);
             } else {
                 File []files = file.listFiles(new HsFileFilter());
             }
